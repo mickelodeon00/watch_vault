@@ -2,7 +2,7 @@
 
 import { ColumnDef } from '@tanstack/react-table';
 import { type Watches } from '../data';
-import { ArrowUpDown, MoreHorizontal } from 'lucide-react';
+import { MoreHorizontal } from 'lucide-react';
 
 import { Button } from '@/components/ui/button';
 import {
@@ -43,14 +43,6 @@ export const columns: ColumnDef<Watches>[] = [
     accessorKey: 'brand',
     header: ({ column }) => (
       <SortableHeader column={column} accessorKey="brand" />
-      // <Button
-      //   variant="ghost"
-      //   className="text-right"
-      //   onClick={() => column.toggleSorting(column.getIsSorted() === 'asc')}
-      // >
-      //   Brand
-      //   <ArrowUpDown className="ml-2 h-4 w-4" />
-      // </Button>
     ),
     cell: ({ row }) => {
       const brand = row.getValue('brand') as string;
